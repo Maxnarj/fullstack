@@ -1,4 +1,4 @@
-```mermaid
+mermaid
 sequenceDiagram
     participant browser
     participant server
@@ -30,4 +30,3 @@ sequenceDiagram
 
 
     Note right of browser: Selain päivittää muistiinpanojen listan hakemalla sen uudestaan palvelimelta.
-```
