@@ -1,0 +1,33 @@
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+
+    activate server
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    server-->>browser: 302 Created (uusi muistiinpano luotu)
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    deactivate server
+
+    Note right of browser: Selain lähettää uuden muistiinpanon palvelimelle POST-pyynnöllä, selain vastaa ja kehottaa uuteen GET pyyntöön.
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: CSS file
+    deactivate server
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: Javascript file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: RAW data
+    deactivate server
+
+
+
+    Note right of browser: Selain päivittää muistiinpanojen listan hakemalla sen uudestaan palvelimelta.
+```
